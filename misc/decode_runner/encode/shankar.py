@@ -1,5 +1,5 @@
 # Alphabets définis selon la substitution de Shankar
-original_alphabet = "DFGHJKLMNUOPQRSTIVWXYZBACE"
+original_alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 shankar_alphabet = "XWYAZBCDQEFGHIKLMNOPJRSTUV"
 
 def shankar_encrypt(text):

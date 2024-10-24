@@ -1,5 +1,5 @@
 # Alphabets définis selon la substitution de Shankar
-original_alphabet = "DFGHJKLMNUOPQRSTIVWXYZBACE"
+original_alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 shankar_alphabet = "XWYAZBCDQEFGHIKLMNOPJRSTUV"
 
 
@@ -43,13 +43,16 @@ def shankar_decrypt(text):
 #     "huitre", "internet", "jouet", "kiwi", "loup", "moto", "ninja", "oiselet", 
 #     "parc", "quartz", "riviere", "souris", "tuba", "usine", "vanille", "wagon"
 # ]
+
+words = ["parapluie", "jambon"]
 # error = False
 
-# for i in words:
-#     encoded = shankar_encrypt(i)
-#     decoded = shankar_decrypt(encoded)
-#     if i != decoded:
-#         print(f"Error:\n{i} -> {encoded} -> {decoded}")
-#         error = True
-#         break
-# if not error: print("All tests passed")
+for i in words:
+    encoded = shankar_encrypt(i)
+    print(encoded)
+    decoded = shankar_decrypt(encoded)
+    if i != decoded:
+        print(f"Error:\n{i} -> {encoded} -> {decoded}")
+        error = True
+        break
+if not error: print("All tests passed")
