@@ -1,3 +1,5 @@
+# Ennoncé:
+
 Nous avions un accès SSH root à cette machine : 172.31.101.12
 Malheureusement, l'administrateur système, avant de se faire renvoyer il y a quelques jours, a ajouté une couche de sécurité sur le port SSH, rendant l'accès impossible. 
 
@@ -40,7 +42,7 @@ Password: P@ssw0rd_Jo
     docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' ctf_knock
 
 
-# Vérouiller le ssh:
+# Activer le filtrage sur le ssh (activé par défault):
 
     knock 172.17.0.2 9012:tcp 5678:tcp 1234:tcp
 
