@@ -18,15 +18,15 @@ Password: P@ssw0rd_Jo
 
 # Lancer le docker:
 
-docker build -t port-knocking-challenge .
-docker run -d --cap-add=NET_ADMIN -p 2222:22 --name ctf_knock port-knocking-challenge
+    docker build -t port-knocking-challenge .
+
+    docker run -d --cap-add=NET_ADMIN -p 2222:22 --name ctf_knock port-knocking-challenge
 
 # Rentrer dans le docker:
 
-docker exec -it ctf_knock /bin/bash
+    docker exec -it ctf_knock /bin/bash
 
     # Afficher les logs:
-
         cat /var/log/knockd.log
     
     # Afficher les rules:
@@ -37,14 +37,14 @@ docker exec -it ctf_knock /bin/bash
 
 # Récupérer l'ip du docker:
 
-docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' ctf_knock
+    docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' ctf_knock
 
 
 # Vérouiller le ssh:
 
-knock 172.17.0.2 9012:tcp 5678:tcp 1234:tcp
+    knock 172.17.0.2 9012:tcp 5678:tcp 1234:tcp
 
 
 # Dévérouiller le ssh:
 
-knock 172.17.0.2 1234:tcp 5678:tcp 9012:tcp
+    knock 172.17.0.2 1234:tcp 5678:tcp 9012:tcp
